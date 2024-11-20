@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    // 使用 Volar
+    "types": ["element-plus/global"],
+    // 别名引用
+    "paths": {
+      "@/*": ["src/*"],
+      // "#/*": ["types/*"]
+    },
+  },
+}
