@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-
+console.log($ghooks)
 </script>
 
 <style lang="scss" scoped>
