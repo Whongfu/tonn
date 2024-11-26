@@ -16,8 +16,8 @@
 <script setup>
 import { useWindowSize } from '@vueuse/core'
 import { onBeforeMount, onUnmounted, ref } from 'vue';
-import { useLoading } from '@/stores/loading'
-const load = useLoading();
+import { storeLoading } from '@/stores/loading'
+const load = storeLoading();
 
 
 

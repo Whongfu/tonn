@@ -5,7 +5,7 @@ import { defineStore } from "pinia";
  * @methods setLoading 设置
  */
 const key: string = 'loading'
-export const useLoading = defineStore(key, {
+export const storeLoading = defineStore(key, {
     state: () => ({
         loading: false
     }),

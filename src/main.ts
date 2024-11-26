@@ -5,7 +5,6 @@ import '@/theme/index.scss' // 主题样式
 import { setupElplus } from './element-plus'
 import { setupRouter } from './router'
 import { setupPinia } from './stores'
-import ghooks from '@/hooks/globalhooks'
 
 const setupApp = () => {
     const app = createApp(App)
@@ -18,9 +17,6 @@ const setupApp = () => {
 
     // 注入 pinia
     setupPinia(app)
-
-    // 注入全局hooks
-    app.use(ghooks)
 
     app.mount('#app')
 }
