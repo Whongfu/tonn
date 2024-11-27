@@ -4,7 +4,7 @@ import 'element-plus/dist/index.css'
 import '@/theme/index.scss' // 主题样式
 import { setupElplus } from './element-plus'
 import { setupRouter } from './router'
-import { setupPinia } from './stores'
+import pinia  from './stores'
 
 const setupApp = () => {
     const app = createApp(App)
@@ -16,7 +16,7 @@ const setupApp = () => {
     setupRouter(app)
 
     // 注入 pinia
-    setupPinia(app)
+    app.use(pinia)
 
     app.mount('#app')
 }

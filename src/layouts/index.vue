@@ -1,13 +1,13 @@
 <template>
     <el-config-provider>
-        <el-container ref="container">
-            <el-aside width="200px">aside</el-aside>
-            <el-scrollbar>
-                <el-header>Header</el-header>
-                <el-main v-loading="load.loading">
+        <el-container class="layout-container" :style="{ height: `${height}px` }">
+            <el-aside class="layout-aside">aside</el-aside>
+            <el-scrollbar class="layout-scrollbar">
+                <el-header ref="headerRef" class="layout-header">Header</el-header>
+                <el-main class="layout-main" :style="{ '--height': (height - 120) + 'px' }" v-loading="load.loading">
                     <RouterView />
                 </el-main>
-                <el-footer>Footer</el-footer>
+                <el-footer class="layout-footer">Footer</el-footer>
             </el-scrollbar>
         </el-container>
     </el-config-provider>
@@ -22,6 +22,12 @@ const load = storeLoading();
 
 
 const { width, height } = useWindowSize()
+
+const headerRef = ref()
+
+const headerDom = useWindowSize(headerRef.value)
+
+console.log(headerDom.height, headerDom.width, width)
 
 // console.log(1111, width, height)
 
@@ -47,4 +53,29 @@ onUnmounted(()=> {
 
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.layout-container {
+
+    .layout-aside {
+        width: 210px;
+        background-color: cadetblue;
+    }
+
+    .layout-scrollbar {
+        width: 100%;
+    }
+
+    .layout-header {
+        background-color: burlywood;
+    }
+
+    .layout-main {
+        height: var(--height);
+    }
+
+    .layout-footer {
+        background-color: darkolivegreen;
+    }
+} 
+
+</style>

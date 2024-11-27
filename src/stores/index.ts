@@ -8,6 +8,6 @@ import piniaPersist from 'pinia-plugin-persist'
 const pinia = createPinia()
 pinia.use(piniaPersist)
 
-export const setupPinia  = (app: App<Element>) => {
-    app.use(pinia)
+export default {
+    install(app: App) { app.use(pinia) }
 }
